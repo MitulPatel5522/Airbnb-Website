@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./Header";
+import Banner from "./Banner";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -9,6 +10,7 @@ function App() {
     <div className="app">
       <Router>
         <Header />
+        <Banner />
 
         {/* <Switch>
           <Route path="/search">

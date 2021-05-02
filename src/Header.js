@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Avatar } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import { Avatar, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 function Header() {
+  const [showSearch, setShowSearch] = useState(false);
+
   return (
     <div className="header">
       <Link to="/">
@@ -17,13 +20,23 @@ function Header() {
         />
       </Link>
 
-      <div className="header__center">
+      <div style={{ backgroundColor: "white" }} className="header__center">
         <input type="text" />
         <SearchIcon />
       </div>
 
       <div className="header__right">
-        <p>Become a host</p>
+        {showSearch && <Search />}
+
+        <Button
+          onClick={() => setShowSearch(!showSearch)}
+          className="banner__searchButton"
+          variant="outlined"
+        >
+          {showSearch ? "Hide" : "Search Dates"}
+        </Button>
+
+        <Button variant="outlined">Add a Listing</Button>
 
         <Avatar />
       </div>

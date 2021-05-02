@@ -37,6 +37,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 15vw;
+  width: 25vw;
   margin-right: 80px;
+}
+
+.header__right > button {
+  text-transform: inherit;
+  font-weight: 400;
+  font-size: medium;
+  background-color: #ff7779;
+  color: white;
+}
+
+.header__right > button:hover {
+  background-color: #ff7779;
+  color: white;
 }
