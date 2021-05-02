@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Banner from "./Banner";
 import Home from "./Home";
+import Footer from "./Footer"
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Banner />
         <Home />
+        <Footer />
         {/* <Switch>
           <Route path="/search">
             <SearchPage />
