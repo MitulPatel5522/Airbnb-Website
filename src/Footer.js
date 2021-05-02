@@ -8,8 +8,44 @@ function Footer() {
     <div className="footer">
       <h5>Developed with ❤️</h5>
       <br />
-      <p>Mitul Patel</p>
-      <p>Sameer Pinjari</p>
+      <p>Mitul Patel
+      <IconButton
+          onClick={() =>
+            window.open("https://github.com/MitulPatel5522", "_blank")
+          }
+        >
+          <GitHub fontSize="small" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            window.open(
+              "https://www.linkedin.com/in/mitul-patel-97939316a",
+              "_blank"
+            );
+          }}
+        >
+          <LinkedIn fontSize="small" />
+        </IconButton>
+      </p>
+      <p>Sameer Pinjari
+      <IconButton
+          onClick={() =>
+            window.open("https://github.com/Sameerpinjari-24", "_blank")
+          }
+        >
+          <GitHub fontSize="small" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            window.open(
+              "https://www.linkedin.com/in/sameer-pinjari-1a09691a0",
+              "_blank"
+            );
+          }}
+        >
+          <LinkedIn fontSize="small" />
+        </IconButton>
+      </p>
       <p>
         Mitanshu Reshamwala
         <IconButton
