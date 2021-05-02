@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import LanguageIcon from "@material-ui/icons/Language";
-import AddIcon from "@material-ui/icons/Add";
 import { Avatar, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Search from "./Search";
