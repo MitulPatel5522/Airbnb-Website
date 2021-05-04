@@ -34,7 +34,9 @@ function Header() {
           {showSearch ? "Hide" : "Search Dates"}
         </Button>
 
-        <Button variant="outlined">Add a Listing</Button>
+        <Button variant="outlined" onclick="Listing()">
+          Add a Listing
+        </Button>
 
         <Avatar />
       </div>
