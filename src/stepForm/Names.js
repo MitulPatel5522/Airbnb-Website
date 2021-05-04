@@ -8,7 +8,12 @@ export const Names = ({ formData, setForm, navigation }) => {
 
   return (
     <Container maxWidth="xs">
-      <h3>Names</h3>
+      <h1>Lets start listing your space!</h1>
+      <br/>
+      <h4>STEP 1</h4>
+      <br/>
+      <br/>
+      <h2>What's Your Name?</h2>
       <TextField
         label="First Name"
         name="firstName"
