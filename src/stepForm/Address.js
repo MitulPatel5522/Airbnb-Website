@@ -7,7 +7,10 @@ export const Address = ({ formData, setForm, navigation }) => {
   const { address, city, state, zip } = formData;
   return (
     <Container maxWidth="xs">
-      <h3>Address</h3>
+      <h4>STEP 2</h4>
+      <br/>
+      <br/>
+      <h2>Where’s your place located?</h2>
       <TextField
         label="Address"
         name="address"

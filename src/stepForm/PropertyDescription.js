@@ -3,31 +3,33 @@ import Container from "@material-ui/core/Container";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-export const Contact = ({ formData, setForm, navigation }) => {
-  const { phone, email } = formData;
-
+export const PropertyDescription = ({ formData, setForm, navigation }) => {
+  const { description, pricing } = formData;
   return (
     <Container maxWidth="xs">
-      <h4>STEP 5</h4>
+      <h4>STEP 4</h4>
       <br/>
       <br/>
-      <h2>What's your contact info?</h2>
+      <h2>How your property looks like?</h2>
       <TextField
-        label="Phone"
-        name="phone"
-        value={phone}
-        type="number"
+        label="Property Description"
+        name="description"
+        value={description}
         onChange={setForm}
         margin="normal"
         variant="outlined"
         autoComplete="off"
         fullWidth
       />
+      <br/>
+      <br/>
+      <h2>What is price of your property?</h2>
       <TextField
-        label="E-Mail"
-        name="email"
-        value={email}
+        label="Property price(for one night stay in Rs: )"
+        name="pricing"
+        value={pricing}
         onChange={setForm}
+        type="number"
         margin="normal"
         variant="outlined"
         autoComplete="off"
