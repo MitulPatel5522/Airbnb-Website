@@ -5,6 +5,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetail from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Box from '@material-ui/core/Box';
 
 import ListItemText from "@material-ui/core/ListItemText";
 
@@ -16,25 +17,27 @@ export const Review = ({ formData, navigation }) => {
   const {
     firstName,
     lastName,
-    nickName,
     address,
     city,
     state,
     zip,
+    property,
+    description,
+    pricing,
     phone,
     email,
   } = formData;
 
   return (
     <Container maxWidth="sm">
-      <h3>Review</h3>
+      <h2>Review</h2>
+      <br />
       <RenderAccordion
         summary="Names"
         go={go}
         details={[
           { "First Name": firstName },
           { "Last Name": lastName },
-          { "Nick Name": nickName },
         ]}
       />
       <RenderAccordion
@@ -48,10 +51,34 @@ export const Review = ({ formData, navigation }) => {
         ]}
       />
       <RenderAccordion
+        summary="Property Type"
+        go={go}
+        details={[
+          { Property: property }
+        ]}
+      />
+
+      <RenderAccordion
+        summary="Property Description and Pricing"
+        go={go}
+        details={[
+          { Description: description },
+          { Pricing: pricing }
+        ]}
+      />
+      <RenderAccordion
         summary="Contact"
         go={go}
         details={[{ Phone: phone }, { Email: email }]}
       />
+      <Button
+          color="secondary"
+          variant="contained"
+          style={{ marginRight: "1rem", marginTop: "1.5rem" }}
+          onClick={() => navigation.previous()}
+        >
+          Back
+        </Button>
       <Button
         color="primary"
         variant="contained"

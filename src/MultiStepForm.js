@@ -11,7 +11,6 @@ import { Submit } from "./stepForm/Submit";
 const defaultData = {
   firstName: "",
   lastName: "",
-  nickName: "",
   address: "",
   city: "",
   state: "",

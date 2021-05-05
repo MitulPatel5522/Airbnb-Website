@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 export const Names = ({ formData, setForm, navigation }) => {
-  const { firstName, lastName, nickName } = formData;
+  const { firstName, lastName } = formData;
 
   return (
     <Container maxWidth="xs">
@@ -34,16 +34,7 @@ export const Names = ({ formData, setForm, navigation }) => {
         autoComplete="off"
         fullWidth
       />
-      <TextField
-        label="Nick Name"
-        name="nickName"
-        value={nickName}
-        onChange={setForm}
-        margin="normal"
-        variant="outlined"
-        autoComplete="off"
-        fullWidth
-      />
+      
       <Button
         variant="contained"
         fullWidth
