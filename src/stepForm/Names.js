@@ -9,10 +9,10 @@ export const Names = ({ formData, setForm, navigation }) => {
   return (
     <Container maxWidth="xs">
       <h1>Lets start listing your space!</h1>
-      <br/>
+      <br />
       <h4>STEP 1</h4>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h2>What's Your Name?</h2>
       <TextField
         label="First Name"
@@ -34,7 +34,7 @@ export const Names = ({ formData, setForm, navigation }) => {
         autoComplete="off"
         fullWidth
       />
-      
+
       <Button
         variant="contained"
         fullWidth

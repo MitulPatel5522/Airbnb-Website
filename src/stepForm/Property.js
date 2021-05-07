@@ -7,37 +7,38 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 
 export const Property = ({ formData, setForm, navigation }) => {
-    const { property } = formData;
+  const { property } = formData;
 
   return (
-      <Container maxWidth="xs">
+    <Container maxWidth="xs">
       <h4>STEP 3</h4>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h2>What kind of place are you listing?</h2>
-      <br/>
-      <br/>
-        <InputLabel id="property-label">Choose a property type</InputLabel>
-        <Select
-          labelId="property-label"
-          paceholder="Select One"
-          id="property"
-          value={property}
-          onChange={setForm}
-          margin="normal"
-          variant="outlined"
-          autoComplete="off"
-          fullWidth
-        > 
-          <MenuItem value="flat">Flat</MenuItem>
-          <MenuItem value="house">House</MenuItem>
-          <MenuItem value="secondary-unit">Secondary Unit</MenuItem>
-          <MenuItem value="unique-space">Unique Space</MenuItem>
-          <MenuItem value="bed-breakfast">Bed and Breakfast</MenuItem>
-          <MenuItem value="boutique-hotel">Boutique Hotel</MenuItem>
-        </Select>
-        <div style={{ marginTop: "1rem" }}>
-      <Button
+      <br />
+      <br />
+      <InputLabel id="property-label">Choose a property type</InputLabel>
+      <Select
+        name="property"
+        labelId="property-label"
+        paceholder="Select One"
+        id="property"
+        value={property}
+        onChange={setForm}
+        margin="normal"
+        variant="outlined"
+        autoComplete="off"
+        fullWidth
+      >
+        <MenuItem value="flat">Flat</MenuItem>
+        <MenuItem value="house">House</MenuItem>
+        <MenuItem value="secondary-unit">Secondary Unit</MenuItem>
+        <MenuItem value="unique-space">Unique Space</MenuItem>
+        <MenuItem value="bed-breakfast">Bed and Breakfast</MenuItem>
+        <MenuItem value="boutique-hotel">Boutique Hotel</MenuItem>
+      </Select>
+      <div style={{ marginTop: "1rem" }}>
+        <Button
           color="secondary"
           variant="contained"
           style={{ marginRight: "1rem" }}
@@ -52,7 +53,7 @@ export const Property = ({ formData, setForm, navigation }) => {
         >
           Next
         </Button>
-        </div>
+      </div>
     </Container>
   );
-}
+};
