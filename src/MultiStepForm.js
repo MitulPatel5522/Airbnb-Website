@@ -3,10 +3,11 @@ import { useForm, useStep } from "react-hooks-helper";
 import { Names } from "./stepForm/Names";
 import { Address } from "./stepForm/Address";
 import { Property } from "./stepForm/Property";
-import {PropertyDescription} from "./stepForm/PropertyDescription"
+import { PropertyDescription } from "./stepForm/PropertyDescription";
 import { Contact } from "./stepForm/Contact";
 import { Review } from "./stepForm/Review";
 import { Submit } from "./stepForm/Submit";
+import Upload from "./stepForm/Upload";
 
 const defaultData = {
   firstName: "",
@@ -26,8 +27,9 @@ const steps = [
   { id: "names" },
   { id: "address" },
   { id: "property" },
-  {id: "description"},
+  { id: "description" },
   { id: "contact" },
+  { id: "upload" },
   { id: "review" },
   { id: "submit" },
 ];
@@ -47,11 +49,13 @@ export const MultiStepForm = () => {
     case "address":
       return <Address {...props} />;
     case "property":
-      return <Property {...props}/>
+      return <Property {...props} />;
     case "description":
-      return <PropertyDescription {...props}/>
+      return <PropertyDescription {...props} />;
     case "contact":
       return <Contact {...props} />;
+    case "upload":
+      return <Upload {...props} />;
     case "review":
       return <Review {...props} />;
     case "submit":
