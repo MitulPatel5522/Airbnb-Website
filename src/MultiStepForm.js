@@ -7,7 +7,7 @@ import { PropertyDescription } from "./stepForm/PropertyDescription";
 import { Contact } from "./stepForm/Contact";
 import { Review } from "./stepForm/Review";
 import { Submit } from "./stepForm/Submit";
-import Upload from "./stepForm/Upload";
+import { Upload } from "./stepForm/Upload";
 
 const defaultData = {
   firstName: "",
@@ -55,7 +55,7 @@ export const MultiStepForm = () => {
     case "contact":
       return <Contact {...props} />;
     case "upload":
-      return <Upload {...props} />;
+        return <Upload {...props} />;
     case "review":
       return <Review {...props} />;
     case "submit":

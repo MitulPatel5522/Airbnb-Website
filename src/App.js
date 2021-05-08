@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/listing">
+          <Route path="/addlisting">
             <Listing />
           </Route>
           <Route path="/home">

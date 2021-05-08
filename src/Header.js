@@ -4,9 +4,11 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Avatar, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import { useHistory } from "react-router-dom";
 
 function Header() {
   const [showSearch, setShowSearch] = useState(false);
+  const history = useHistory();
 
   return (
     <div className="header">
@@ -34,7 +36,7 @@ function Header() {
           {showSearch ? "Hide" : "Search Dates"}
         </Button>
 
-        <Button variant="outlined" onclick="Listing()">
+        <Button variant="outlined" onClick={() => history.push("/addlisting")}>
           Add a Listing
         </Button>
 
