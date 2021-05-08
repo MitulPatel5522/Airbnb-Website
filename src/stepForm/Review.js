@@ -74,7 +74,7 @@ export const Review = ({ formData, navigation }) => {
       <Button
           color="secondary"
           variant="contained"
-          style={{ marginRight: "1rem", marginTop: "1.5rem" }}
+          style={{ marginRight: "1rem", marginTop: "1.5rem", color: "#f74c4f", backgroundColor :"#fff", border: "1px solid lightgray", fontWeight: "700" }}
           onClick={() => navigation.previous()}
         >
           Back
@@ -82,7 +82,7 @@ export const Review = ({ formData, navigation }) => {
       <Button
         color="primary"
         variant="contained"
-        style={{ marginTop: "1.5rem" }}
+        style={{ marginTop: "1.5rem", color: "#fff", backgroundColor :"#f74c4f" }}
         onClick={() => go("submit")}
       >
         Submit
@@ -92,7 +92,7 @@ export const Review = ({ formData, navigation }) => {
 };
 
 export const RenderAccordion = ({ summary, details, go }) => (
-  <Accordion>
+  <Accordion defaultExpanded>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
       {summary}
     </AccordionSummary>
