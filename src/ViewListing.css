@@ -1,0 +1,14 @@
+.view {
+  height: 200vh;
+  position: relative;
+  padding-top: 30px;
+  padding-right: 80px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+.card {
+  justify-content: right;
+}
+image {
+  height: 20vh;
+}
