@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
-import { ViewListing } from "./ViewListing";
+import ViewListing from "./ViewListing";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
