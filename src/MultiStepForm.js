@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, useStep } from "react-hooks-helper";
 import { Names } from "./stepForm/Names";
 import { Address } from "./stepForm/Address";
@@ -8,6 +8,8 @@ import { Contact } from "./stepForm/Contact";
 import { Review } from "./stepForm/Review";
 import { Submit } from "./stepForm/Submit";
 import { Upload } from "./stepForm/Upload";
+import { db, storage } from "./firebase";
+import { Redirect } from "react-router";
 
 const defaultData = {
   firstName: "",
@@ -36,12 +38,60 @@ const steps = [
 
 export const MultiStepForm = () => {
   const [formData, setForm] = useForm(defaultData);
+  const [images, setImages] = useState([]);
   const { step, navigation } = useStep({
     steps,
     initialStep: 0,
   });
 
   const props = { formData, setForm, navigation };
+
+  const doSubmit = () => {
+    console.log("submitted", formData, images);
+    const {
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      zip,
+      property,
+      description,
+      pricing,
+      phone,
+      email,
+    } = formData;
+
+    db.collection("listings")
+      .add({
+        firstName,
+        lastName,
+        address,
+        city,
+        state,
+        zip,
+        property,
+        description,
+        pricing,
+        phone,
+        email,
+      })
+      .then((docRef) => {
+        const listingID = docRef.id;
+        const listingRef = storage.ref().child("listings").child(listingID);
+        Array.from(images).map((file) =>
+          listingRef
+            .child(file.name)
+            .put(file)
+            .then((_snapshot) => {
+              console.log("Uploaded a blob or file!");
+            })
+        );
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+  };
 
   switch (step.id) {
     case "names":
@@ -55,17 +105,13 @@ export const MultiStepForm = () => {
     case "contact":
       return <Contact {...props} />;
     case "upload":
-        return <Upload {...props} />;
+      return <Upload {...props} handleImages={setImages} images={images} />;
     case "review":
-      return <Review {...props} />;
+      return <Review {...props} handleSubmit={doSubmit} />;
     case "submit":
       return <Submit {...props} />;
+    default:
+      return <Redirect to="/" />;
   }
-
-  return (
-    <div>
-      <h1>Multi step form</h1>
-    </div>
-  );
 };
 export default MultiStepForm;

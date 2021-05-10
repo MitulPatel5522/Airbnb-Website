@@ -5,14 +5,12 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetail from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Box from '@material-ui/core/Box';
-
 import ListItemText from "@material-ui/core/ListItemText";
 
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 
-export const Review = ({ formData, navigation }) => {
+export const Review = ({ formData, navigation, handleSubmit }) => {
   const { go } = navigation;
   const {
     firstName,
@@ -35,10 +33,7 @@ export const Review = ({ formData, navigation }) => {
       <RenderAccordion
         summary="Names"
         go={go}
-        details={[
-          { "First Name": firstName },
-          { "Last Name": lastName },
-        ]}
+        details={[{ "First Name": firstName }, { "Last Name": lastName }]}
       />
       <RenderAccordion
         summary="Address"
@@ -53,18 +48,15 @@ export const Review = ({ formData, navigation }) => {
       <RenderAccordion
         summary="Property Type"
         go={go}
-        details={[
-          { Property: property }
-        ]}
+        alt="property"
+        details={[{ Property: property }]}
       />
 
       <RenderAccordion
         summary="Property Description and Pricing"
         go={go}
-        details={[
-          { Description: description },
-          { Pricing: pricing }
-        ]}
+        alt="description"
+        details={[{ Description: description }, { Pricing: pricing }]}
       />
       <RenderAccordion
         summary="Contact"
@@ -72,18 +64,32 @@ export const Review = ({ formData, navigation }) => {
         details={[{ Phone: phone }, { Email: email }]}
       />
       <Button
-          color="secondary"
-          variant="contained"
-          style={{ marginRight: "1rem", marginTop: "1.5rem", color: "#f74c4f", backgroundColor :"#fff", border: "1px solid lightgray", fontWeight: "700" }}
-          onClick={() => navigation.previous()}
-        >
-          Back
-        </Button>
+        color="secondary"
+        variant="contained"
+        style={{
+          marginRight: "1rem",
+          marginTop: "1.5rem",
+          color: "#f74c4f",
+          backgroundColor: "#fff",
+          border: "1px solid lightgray",
+          fontWeight: "700",
+        }}
+        onClick={() => navigation.previous()}
+      >
+        Back
+      </Button>
       <Button
         color="primary"
         variant="contained"
-        style={{ marginTop: "1.5rem", color: "#fff", backgroundColor :"#f74c4f" }}
-        onClick={() => go("submit")}
+        style={{
+          marginTop: "1.5rem",
+          color: "#fff",
+          backgroundColor: "#f74c4f",
+        }}
+        onClick={() => {
+          go("submit");
+          handleSubmit();
+        }}
       >
         Submit
       </Button>
@@ -91,7 +97,7 @@ export const Review = ({ formData, navigation }) => {
   );
 };
 
-export const RenderAccordion = ({ summary, details, go }) => (
+export const RenderAccordion = ({ summary, details, go, alt }) => (
   <Accordion defaultExpanded>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
       {summary}
@@ -109,7 +115,13 @@ export const RenderAccordion = ({ summary, details, go }) => (
         <IconButton
           color="primary"
           component="span"
-          onClick={() => go(`${summary.toLowerCase()}`)}
+          onClick={() => {
+            if (alt) {
+              go(`${alt}`);
+            } else {
+              go(`${summary.toLowerCase()}`);
+            }
+          }}
         >
           <EditIcon />
         </IconButton>
