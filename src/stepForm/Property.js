@@ -1,11 +1,9 @@
 import React from "react";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-
 
 export const Property = ({ formData, setForm, navigation }) => {
   const { property } = formData;
@@ -40,25 +38,27 @@ export const Property = ({ formData, setForm, navigation }) => {
       <div style={{ marginTop: "1rem" }}>
         <Button
           variant="contained"
-          style={{ marginRight: "1rem", color: "#f74c4f", backgroundColor :"#fff", border: "1px solid lightgray", fontWeight: "700" }}
+          style={{
+            marginRight: "1rem",
+            color: "#f74c4f",
+            backgroundColor: "#fff",
+            border: "1px solid lightgray",
+            fontWeight: "700",
+          }}
           onClick={() => navigation.previous()}
         >
           Back
         </Button>
         <Button
           variant="contained"
-          style={{color: "#fff", backgroundColor :"#f74c4f"}}
-          onClick={() => 
-            {
-              if (property === "")
-              {
-                alert("Select Any one option from the list")
-              }
-            else{
-              navigation.next()  
+          style={{ color: "#fff", backgroundColor: "#f74c4f" }}
+          onClick={() => {
+            if (property === "") {
+              alert("Select Any one option from the list");
+            } else {
+              navigation.next();
             }
-          }
-          }
+          }}
         >
           Next
         </Button>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, Input, IconButton } from "@material-ui/core";
+import { Container, Button, IconButton } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 export const Upload = ({ images, navigation, handleImages }) => {
@@ -9,7 +9,7 @@ export const Upload = ({ images, navigation, handleImages }) => {
     const filesArray = Array.from(images);
     setFiles(filesArray);
     makeImgArray(Array.from(images));
-  }, []);
+  }, [images]);
 
   const makeImgArray = (filesArray) => {
     Promise.all(
@@ -94,9 +94,9 @@ export const Upload = ({ images, navigation, handleImages }) => {
       {files.map((imageURI, idx) => (
         <div key={idx}>
           <img
-            style={{ width: "200px", height: "200px", height: "auto" }}
+            style={{ width: "200px", height: "auto" }}
             src={imageURI}
-            alt="Photo uploaded"
+            alt="Uploaded"
           />
           <br />
         </div>
