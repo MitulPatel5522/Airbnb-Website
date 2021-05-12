@@ -4,6 +4,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
 import Listing from "./Listing";
+import SearchPage from "./SearchPage";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/search">
+            <SearchPage />
           </Route>
           <Route path="/">
             <Home />
