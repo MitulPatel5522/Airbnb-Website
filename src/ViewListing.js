@@ -45,7 +45,7 @@ const ViewListing = () => {
     const listingId = "1jfl8DZFO6RWQESFiliN";
     db.collection("listings")
       .doc(listingId)
-      .get()
+      .get({ source: "cache" })
       .then((doc) => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
@@ -62,36 +62,36 @@ const ViewListing = () => {
   return (
     <div className="view">
       <Typography variant="h4"> {listing.property_name} </Typography>
-      <p>City,State</p>
+      <p>
+        {listing.city},{listing.state}
+      </p>
       <br />
       <ImageGallery className="image" items={images} />
       <br />
-      <Typography variant="h5"> Property Desciption </Typography>
-      <p>
-        Little more content like Rating or number of rooms/hall/gallery etc.
-      </p>
-      <br />
-      <Divider />
-      <br />
-      <Card
-        variant="outlined"
-        className="card"
-        style={{ width: 300, marginBottom: 30, float: "right" }}
-      >
-        <CardContent>
-          <Typography variant="h6" fontWeight="bold">
-            Rs. 500/Night
-          </Typography>
-          <Divider />
-          <Typography color="textSecondary" gutterBottom>
-            Payment Options
-          </Typography>
-          <SvgIcon component={MasterIcon} viewBox="0 0 500 400" />
-          <SvgIcon component={VisaIcon} viewBox="0 0 500 400" />
-          <SvgIcon component={PayPalIcon} viewBox="0 0 500 400" />
-          <SvgIcon component={ExpressIcon} viewBox="0 0 500 400" />
-        </CardContent>
-      </Card>
+      <div>
+        <Typography variant="h5"> Property Desciption </Typography>
+        <p className="description">{listing.description}</p>
+        <Card
+          variant="outlined"
+          className="card"
+          style={{ width: 300, float: "right" }}
+        >
+          <CardContent>
+            <Typography variant="h6" fontWeight="bold">
+              Rs. {listing.price}/Night
+            </Typography>
+            <Divider />
+            <Typography color="textSecondary" gutterBottom>
+              Payment Options
+            </Typography>
+            <SvgIcon component={MasterIcon} viewBox="0 0 500 400" />
+            <SvgIcon component={VisaIcon} viewBox="0 0 500 400" />
+            <SvgIcon component={PayPalIcon} viewBox="0 0 500 400" />
+            <SvgIcon component={ExpressIcon} viewBox="0 0 500 400" />
+          </CardContent>
+        </Card>
+        <h1>Amenities</h1>
+      </div>
     </div>
   );
 };

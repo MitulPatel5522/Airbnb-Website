@@ -6,9 +6,17 @@
   padding-bottom: 50px;
   padding-left: 80px;
 }
-.card {
+/* .card {
   justify-content: right;
-}
+} */
 image {
   height: 20vh;
+}
+.description {
+  float: left;
+  width: 800px;
+  text-align: left;
+}
+.inset {
+  margin-left: 720;
 }
