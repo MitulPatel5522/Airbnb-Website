@@ -1,5 +1,5 @@
 .view {
-  height: 200vh;
+  height: 270vh;
   position: relative;
   padding-top: 30px;
   padding-right: 80px;
@@ -9,7 +9,7 @@
 /* .card {
   justify-content: right;
 } */
-image {
+.image {
   height: 20vh;
 }
 .description {
@@ -19,4 +19,25 @@ image {
 }
 .inset {
   margin-left: 720;
+}
+.amenity {
+  padding-top: 110px;
+  padding-bottom: 20px;
+}
+.list > li {
+  margin: 0 0 15px 0;
+}
+.box1 {
+  float: left;
+}
+.box2 {
+  float: left;
+  margin-left: 100px;
+}
+.box3 {
+  float: right;
+  margin-left: 20px;
+}
+.host {
+  padding-top: 240px;
 }

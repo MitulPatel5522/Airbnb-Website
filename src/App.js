@@ -14,7 +14,7 @@ function App() {
         <Header />
 
         <Switch>
-          <Route path="/viewlisting">
+          <Route path="/viewlisting/:listingId">
             <ViewListing />
           </Route>
           <Route path="/">
