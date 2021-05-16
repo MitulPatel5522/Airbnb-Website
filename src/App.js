@@ -3,9 +3,10 @@ import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
+import ViewListing from "./ViewListing";
 import Listing from "./Listing";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route path="/addlisting">
             <Listing />
+          </Route>
+          <Route path="/viewlisting/:listingId">
+            <ViewListing />
           </Route>
           <Route path="/home">
             <Home />

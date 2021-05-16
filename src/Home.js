@@ -1,7 +1,7 @@
 import React from "react";
+import Banner from "./Banner";
 import "./Home.css";
 import Card from "./Card";
-import Banner from "./Banner";
 
 // ES7 snippets to do 'rfce'
 
