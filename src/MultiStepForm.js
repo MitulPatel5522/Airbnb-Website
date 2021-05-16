@@ -78,6 +78,7 @@ export const MultiStepForm = () => {
         pricing,
         phone,
         email,
+        status: "processing",
       })
       .then((docRef) => {
         const listingID = docRef.id;
