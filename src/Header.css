@@ -53,3 +53,11 @@
   background-color: #ff7779;
   color: white;
 }
+
+.banner__searchButton {
+  background-color: white !important;
+  font-weight: 700 !important;
+  font-size: medium;
+  text-transform: inherit !important;
+  color: #ff7779 !important;
+}
