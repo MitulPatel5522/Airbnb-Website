@@ -18,6 +18,7 @@ const defaultData = {
   city: "",
   state: "",
   zip: "",
+  title: "",
   property: "",
   description: "",
   pricing: "",
@@ -55,6 +56,7 @@ export const MultiStepForm = () => {
       city,
       state,
       zip,
+      title,
       property,
       description,
       pricing,
@@ -70,11 +72,13 @@ export const MultiStepForm = () => {
         city,
         state,
         zip,
+        title,
         property,
         description,
         pricing,
         phone,
         email,
+        status: "processing",
       })
       .then((docRef) => {
         const listingID = docRef.id;
