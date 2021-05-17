@@ -14,27 +14,6 @@ import {
 import SearchResult from "./SearchResult";
 import { db, storage } from "./firebase";
 
-const defaultData = {
-  data: {
-    address: "svddsv",
-    amenities: (2)[("amenity1", "amenity2")],
-    city: "sdv",
-    description: "dsvdsvdsv",
-    email: "rm@gm.com",
-    firstName: "svs",
-    lastName: "svd",
-    phone: "1234567890",
-    pricing: "6156",
-    property: "house",
-    state: "svds",
-    title: "De Villa",
-    zip: "400080",
-  },
-  imgUrl:
-    "https://firebasestorage.googleapis.com/v0/b/airbnb-website.appspot.com/o/listings%2FSlwl5xyR2jLAfQCUP38p%2FWhatsApp%20Image%202021-05-10%20at%2012.01.50.jpeg?alt=media&token=ebac760f-d50d-4487-bc5a-ae89deaaf6b8",
-  id: "asdni34j2ojr23",
-};
-
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -112,8 +91,8 @@ function SearchPage() {
   const [personName, setPersonName] = React.useState([]);
   const [sortCategory, setSortCategory] = useState("title");
 
-  const [listings, setListings] = useState([defaultData]);
-  const [filteredListings, setFilteredListings] = useState([defaultData]);
+  const [listings, setListings] = useState([]);
+  const [filteredListings, setFilteredListings] = useState([]);
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
