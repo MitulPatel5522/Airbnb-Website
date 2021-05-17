@@ -3,12 +3,10 @@ import "./SearchPage.css";
 import {
   Button,
   Chip,
-  Fade,
   FormControl,
   Input,
   InputLabel,
   makeStyles,
-  Menu,
   MenuItem,
   Select,
   useTheme,
@@ -113,24 +111,12 @@ function SearchPage() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   const [sortCategory, setSortCategory] = useState("title");
-  const [filters, setFilters] = useState([]);
 
   const [listings, setListings] = useState([defaultData]);
   const [filteredListings, setFilteredListings] = useState([defaultData]);
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
-  };
-
-  const handleChangeMultiple = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
-    }
-    setPersonName(value);
   };
 
   useEffect(() => {
@@ -174,17 +160,6 @@ function SearchPage() {
       })
       .catch((err) => console.error(err));
   }, []);
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <div className="searchPage">
@@ -249,7 +224,6 @@ function SearchPage() {
         (
           {
             data: { property, city, title, description, pricing, thumbnailURL },
-            imgUrl,
             id,
           },
           key
