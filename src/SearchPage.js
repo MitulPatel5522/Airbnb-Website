@@ -133,6 +133,7 @@ function SearchPage() {
 
   useEffect(() => {
     db.collection("listings")
+      .where("status", "==", "verified")
       .get()
       .then((querySnapshot) => {
         let docs = [];
