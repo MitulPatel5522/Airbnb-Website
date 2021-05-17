@@ -5,6 +5,7 @@ import Home from "./Home";
 import Footer from "./Footer";
 import ViewListing from "./ViewListing";
 import Listing from "./Listing";
+import SearchPage from "./SearchPage";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/search">
+            <SearchPage />
           </Route>
           <Route path="/">
             <Home />
