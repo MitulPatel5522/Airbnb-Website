@@ -83,12 +83,20 @@ export const MultiStepForm = () => {
       .then((docRef) => {
         const listingID = docRef.id;
         const listingRef = storage.ref().child("listings").child(listingID);
-        Array.from(images).map((file) =>
+        Array.from(images).map((file, idx) =>
           listingRef
             .child(file.name)
             .put(file)
             .then((_snapshot) => {
               console.log("Uploaded a blob or file!");
+              if (idx === 0) {
+                _snapshot.ref.getDownloadURL().then((downloadURL) => {
+                  console.log("File available at", downloadURL);
+                  db.collection("listings").doc(listingID).update({
+                    thumbnailURL: downloadURL,
+                  });
+                });
+              }
             })
         );
       })
